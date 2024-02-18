@@ -1,0 +1,6 @@
+etc
+dist
+node_modules/
+
+# Custom jest ignore file and directory
+jest.config.cjs
