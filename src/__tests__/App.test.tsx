@@ -8,8 +8,8 @@ describe('Testing App Component', () => {
     const button = screen.getByRole('button', { name: 'button increment' });
     const text = screen.getByRole('presentation', { name: 'counter text' });
 
-    expect(button).toHaveTextContent("Add Counter Value")
-    expect(text).toHaveTextContent("count is 0")
+    expect(button).toHaveTextContent('Add Counter Value');
+    expect(text).toHaveTextContent('count is 0');
   });
 
   it('Simulate click button add should be text will be updated', async () => {
@@ -17,16 +17,14 @@ describe('Testing App Component', () => {
     const button = screen.getByRole('button', { name: 'button increment' });
     const text = screen.getByRole('presentation', { name: 'counter text' });
 
-    expect(button).toHaveTextContent("Add Counter Value")
-    expect(text).toHaveTextContent("count is 0")
+    expect(button).toHaveTextContent('Add Counter Value');
+    expect(text).toHaveTextContent('count is 0');
 
     /**
      * Simulate click button
      */
-    await act(() => userEvent.click(button))
+    await act(() => userEvent.click(button));
 
-    expect(text).toHaveTextContent("count is 1")
+    expect(text).toHaveTextContent('count is 1');
   });
-
-
 });
