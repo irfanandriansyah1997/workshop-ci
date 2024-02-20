@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 
 import './App.css';
 
-interface AppProps {
+export interface AppProps {
   onUpdateValue?: (value: number) => void;
+  onCreate(): void;
+  onUpdate(): void;
 }
 
 function App(props: AppProps) {
@@ -15,7 +17,7 @@ function App(props: AppProps) {
   const handleOnMinus = () => setCount((currentValue) => currentValue - 1);
 
   useEffect(() => {
-    if (onUpdateValue) onUpdateValue(count);
+    if (onUpdateValue && count !== 0) onUpdateValue(count);
   }, [onUpdateValue, count]);
 
   return (
@@ -32,7 +34,7 @@ function App(props: AppProps) {
 
           <button
             role='button'
-            aria-label='button counter'
+            aria-label='button decrement'
             onClick={handleOnMinus}
           >
             Minus Counter Value
